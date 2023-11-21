@@ -1,0 +1,79 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Trainings",
+    "dateExported": "2023-11-21T07:09:46.190Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "91a5d43b-43f3-4b56-acbc-9f4540b67a71",
+            "colId": "989e4305-c7f5-4e18-807c-dc9577e6258d",
+            "containerId": "",
+            "name": "GET All trainings",
+            "url": "{{URL}}/api/trainings",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-14T08:07:41.807Z",
+            "modified": "2023-11-14T08:36:19.779Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "85050ac2-0780-4c69-b99d-ca231ff8b15c",
+            "colId": "989e4305-c7f5-4e18-807c-dc9577e6258d",
+            "containerId": "",
+            "name": "GET training by ID",
+            "url": "localhost:3000/api/trainings/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-14T08:11:31.898Z",
+            "modified": "2023-11-14T08:12:01.427Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de9806d9-6095-4129-8b84-771cc2fd8b12",
+            "colId": "989e4305-c7f5-4e18-807c-dc9577e6258d",
+            "containerId": "",
+            "name": "POST new training",
+            "url": "localhost:3000/api/trainings/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-11-14T08:12:58.574Z",
+            "modified": "2023-11-14T08:15:46.146Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a5c2bcf4-d8f1-45b3-91b5-519f04361e17",
+            "colId": "989e4305-c7f5-4e18-807c-dc9577e6258d",
+            "containerId": "",
+            "name": "PUT trining update by ID",
+            "url": "localhost:3000/api/trainings/3",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-11-14T08:13:53.420Z",
+            "modified": "2023-11-14T08:15:27.144Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6504364f-47c1-4f14-bde8-407086c61f9e",
+            "colId": "989e4305-c7f5-4e18-807c-dc9577e6258d",
+            "containerId": "",
+            "name": "DELETE by ID",
+            "url": "localhost:3000/api/trainings/2",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-11-14T08:14:50.718Z",
+            "modified": "2023-11-14T08:15:16.334Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
