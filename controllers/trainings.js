@@ -3,6 +3,7 @@
 
 const { request } = require("express");
 const Training = require("../models/Training");
+const ErrorResponse = require("../utils/errorResponse");
 
 // @access Public
 exports.getTrainings = async (req, res, next) => {
@@ -22,12 +23,12 @@ exports.getTrainings = async (req, res, next) => {
 exports.getTraining = async (req, res, next) => {
   try {
     const training = await Training.findById(req.params.id);
-    if (training) {
+    if (!training) {
       return res.status(400).json({ success: false, msg: "Not found" });
     }
     res.status(200).json({ success: true, data: training });
   } catch (error) {
-    res.status(400).json({ success: false });
+    next(new ErrorResponse(`Course id (${req.params.id}) not correct`, 404));
   }
 };
 
@@ -39,7 +40,7 @@ exports.createTraining = async (req, res, next) => {
     const training = await Training.create(req.body);
     res.status(201).json({ success: true, data: training });
   } catch (error) {
-    res.status(400).json({ success: false });
+    next(error)
   }
 };
 // @desc   Update training
@@ -51,7 +52,7 @@ exports.updateTraining = async (req, res, next) => {
       new: true, // A frissített adatokat kapjuk vissza
       runValidators: true, // Ellenőrizze a frissített adatokat a modell
     });
-    if (training) {
+    if (!training) {
       return res.status(400).json({ success: false, msg: "Not found" });
     }
     res.status(200).json({ success: true, data: training });
@@ -66,7 +67,7 @@ exports.updateTraining = async (req, res, next) => {
 exports.deleteTraining = async (req, res, next) => {
   try {
     const training = await Training.findByIdAndDelete(req.params.id);
-    if (training) {
+    if (!training) {
       return res.status(400).json({ success: false, msg: "Not found" });
     }
     res.status(200).json({ success: true, data: {} });
